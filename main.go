@@ -117,11 +117,7 @@ func computeDiff(formatter aurora.Aurora, a interface{}, b interface{}) string {
 
 func newFormatter(noColor bool) aurora.Aurora {
 	var formatter aurora.Aurora
-	if noColor || !isTerminal() {
-		formatter = aurora.NewAurora(false)
-	} else {
-		formatter = aurora.NewAurora(true)
-	}
+	formatter = aurora.NewAurora(true)
 	return formatter
 }
 
