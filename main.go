@@ -107,9 +107,9 @@ func computeDiff(formatter aurora.Aurora, a interface{}, b interface{}) string {
 	for _, s := range strings.Split(pretty.Compare(a, b), "\n") {
 		switch {
 		case strings.HasPrefix(s, "+"):
-			diffs = append(diffs, formatter.Bold(formatter.Cyan(s)).String())
+			diffs = append(diffs, formatter.Green(s).String())
 		case strings.HasPrefix(s, "-"):
-			diffs = append(diffs, formatter.Bold(formatter.Red(s)).String())
+			diffs = append(diffs, formatter.Red(s).String())
 		}
 	}
 	return strings.Join(diffs, "\n")
